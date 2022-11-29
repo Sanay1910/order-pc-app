@@ -1,13 +1,12 @@
 import React from "react";
-import Logo from "../assets/logo.png";
 import classes from "./Header.module.css";
+import HeaderCartButton from "./HeaderCartButton";
 
 function Header(props) {
   return (
-    <header>
-      <div className={classes["main-image"]}>
-        <img src={Logo} alt="PC-World logo" />
-      </div>
+    <header className={classes.header}>
+      <h1>PC World</h1>
+      <HeaderCartButton onShowCart={props.onShowCart}/>
     </header>
   );
 }
