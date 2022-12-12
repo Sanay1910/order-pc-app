@@ -46,7 +46,7 @@ function Cart(props) {
   const submitOrderHandler = async (userData) => {
     setIsSubmitting(true);
     await fetch(
-      "https://react-http-972b4-default-rtdb.europe-west1.firebasedatabase.app/",
+      "https://react-http-972b4-default-rtdb.europe-west1.firebasedatabase.app/orders.json",
       {
         method: "POST",
         body: JSON.stringify({
@@ -57,6 +57,7 @@ function Cart(props) {
     );
     setIsSubmitting(false);
     setDidSubmit(true);
+    cartCtx.clearItems();
   };
 
   const modalActions = (
